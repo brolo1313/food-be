@@ -56,6 +56,10 @@ const sendNotification = (subscription, dataToSend) => {
   webpush.sendNotification(subscription, dataToSend);
 };
 
+app.get('/', (req, res) => {
+  res.status(200).json('Welcome, your server-app is working well');
+})
+
 //route to test send notification
 app.get("/send-notification", (req, res) => {
   const subscription = dummyDb.subscription; //get subscription from your databse here.
@@ -73,3 +77,6 @@ app.get("/send-notification", (req, res) => {
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+
+module.exports = app
