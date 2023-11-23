@@ -9,8 +9,6 @@ app.use(bodyParser.json());
 
 const port = 4000;
 
-app.get("/", (req, res) => res.send("Hello World!"));
-
 const dummyDb = { subscription: null }; //dummy in memory store
 
 const saveToDatabase = async (subscription) => {
